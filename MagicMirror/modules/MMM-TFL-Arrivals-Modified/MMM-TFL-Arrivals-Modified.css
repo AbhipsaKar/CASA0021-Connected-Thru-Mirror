@@ -1,0 +1,50 @@
+.route {
+  font-size: 75%;
+  display: inline-block;
+  padding-right: 10px;
+  text-align: left;
+  color: #000;
+}
+
+.dest {
+  min-width: 175px;
+  max-width: 200px;
+  overflow: hidden;
+  padding-right: 10px;
+  text-align: left;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #000;
+}
+
+.route i {
+  margin-right: 5px;
+}
+
+.timeTabled {
+  text-align: right;
+  padding-right: 8px;
+  color: #000;
+}
+.due {
+  color: #dc241f;
+}
+
+.late {
+  color: #ffce00;
+}
+
+.busStopName {
+  color: #999;
+  font-family: "Roboto Condensed";
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 15px;
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+  text-align: left;
+}
+
+.MMM-TFL-Arrivals-Modified header {
+  background: #FF6767;
+}
