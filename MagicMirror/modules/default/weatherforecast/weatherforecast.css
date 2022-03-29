@@ -1,0 +1,48 @@
+.weatherforecast .day {
+  padding-left: 10px;
+  padding-right: 20px;
+  color: #000;
+}
+
+.weatherforecast .weather-icon {
+  padding-right: 30px;
+  text-align: center;
+  color: #000;
+}
+
+.weatherforecast .min-temp {
+  padding-left: 20px;
+  padding-right: 0;
+  color: #000;
+}
+
+.weatherforecast .min-temp {
+  padding-left: 20px;
+  padding-right: 10px;
+  color: #000;
+}
+
+
+.weatherforecast .rain {
+  padding-left: 20px;
+  padding-right: 0;
+  color: #000;
+}
+
+.weatherforecast tr.colored .min-temp {
+  color: #868686;
+}
+
+.weatherforecast tr.colored .max-temp {
+  color: #B1B1B1;
+}
+
+.weatherforecast header{
+  background-color: #FF9900;
+  border-radius: 0px 0px 0px 0px;
+}
+
+.module.weatherforecast{
+  border-radius: 0px 0px 20px 20px;
+  border-top: 0px solid var(--color-text-bright);
+}
