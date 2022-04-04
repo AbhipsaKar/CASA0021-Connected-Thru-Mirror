@@ -190,13 +190,14 @@ Module.register("MMM-RecordPortal", {
 	resume: function() {
 		//start video
 		//this.show();
+		/*
 		console.log("Resume function called", this.record_state);
 		if(this.record_state == false)
 		{
 			window.MediaRecorder.start(1000);
 			this.record_state = true;
 			document.querySelector("h3").textContent = "RECORDING";
-		}	
+		}*/	
 	},
 
 	sendNotification: function(blob)
@@ -213,26 +214,42 @@ Module.register("MMM-RecordPortal", {
 	
 
   	socketNotificationReceived: function(notification, payload) {
-    	if (notification === 'MQTT_DATA' && payload.topic === this.config.topic) {
-      	/*this.mqttVal = payload.data.toString();
+    	/*if (notification === 'MQTT_DATA' && payload.topic === this.config.topic) {
+      	this.mqttVal = payload.data.toString();
       	this.loaded = true;
       	console.log("Data from mqtt"+ this.mqttVal );
       	this.photo.setAttribute('src', this.mqttVal);
      	 this.updateDom(3000);
-	  	*/
+	  	
 
     	}
 
     	if (notification === 'ERROR') {
       		this.sendNotification('SHOW_ALERT', payload);
-    	}
+    	}*/
   },
 
   notificationReceived: function(notification, payload, sender) {
     var self = this;
-
-
-
+    
+    if(notification === 'START_TIMER') 
+    {
+	console.log("Record button press", this.record_state);
+		if(this.record_state == false)
+		{
+			console.log("Start recording");
+			window.MediaRecorder.start(1000);
+			this.record_state = true;
+			document.querySelector("h3").textContent = "RECORDING";
+		}
+		else{
+			console.log("Stop recording");
+			
+			this.stopFuncton();
+			document.querySelector("h3").textContent = "Press RED button to record";
+		}	    
+    }
+/*
     var topic;
     if (sender) {
       Log.log(this.name + " received a module notification: " + notification + " from sender: " + sender.name + ": ", payload);
@@ -240,13 +257,8 @@ Module.register("MMM-RecordPortal", {
     } else {
       Log.log(this.name + " received a system notification: " + notification + ": ", payload);
       topic = this.config.topic + "/" + notification;
-    }
+    }*/
 
-    this.sendSocketNotification("MQTT_SEND", {
-      mqttServer: self.config.mqttServer,
-      topic: topic,
-      payload: payload
-    });
   },
 
 });
