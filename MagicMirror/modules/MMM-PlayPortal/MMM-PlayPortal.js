@@ -21,7 +21,7 @@ Module.register("MMM-PlayPortal", {
 		fadeSpeed: 1000, // The speed to hide the module (milliseconds).
 		showcontrols: false, // Set to true if you want the video controls to show.
 		preload: "auto", // Can be set to: "auto", "metadata", "none".
-		autoplay: true, // If set to true, sound (muted below) has to be true, otherwise the video will not auto play.
+		autoplay: false, // If set to true, sound (muted below) has to be true, otherwise the video will not auto play.
 		muted: false, // Mute the sound. If auto play is true, this needs to be true as well, otherwise the video will not auto play.
 		pauseonhide: true, // If true the module will pause the video when hidden.
 		resumeonshow: true,  // If true the module will resume the video when shown.
@@ -37,6 +37,19 @@ Module.register("MMM-PlayPortal", {
 		return ["MMM-PlayPortal.css"];
 	},
 
+	suspend: function () {
+		if (this.config.pauseonhide) {
+			this.video.pause();
+		}
+	},
+
+	// What happens when the module is shown.
+	resume: function () {
+		if (this.config.resumeonshow) {
+			this.video.play();
+		}
+	},
+
 
 	nextVideo: function () {
 
@@ -45,7 +58,15 @@ Module.register("MMM-PlayPortal", {
 			this.hide(this.config.fadeSpeed)
 		}
 
+		this.wrapper.animate([
+			{transform: 'translate(0px,200px)'},
+			{transform: 'translate(0px,0px)'}
+		   ],
+		   {duration: 500});
 		
+		//this.animate({right: '250px'});
+		//wrapper.hide(this.config.fadeSpeed);
+
 		// Resets the video queue if set to loop.
 		if (this.videoArray.length == 0) {
 			console.log(" 0 length in video list");
@@ -107,8 +128,9 @@ Module.register("MMM-PlayPortal", {
 		}
 
 		// Build the player.
-		var wrapper = document.createElement("div");
-
+		this.wrapper = document.createElement("div");
+		
+		this.wrapper.id = "container";
 		// Adds the video
 		this.video = document.createElement("video");
 
@@ -126,6 +148,7 @@ Module.register("MMM-PlayPortal", {
 
 		this.video.addEventListener("ended", () => {
 			console.log("Video ended");
+		
 			this.nextVideo(this);
 		});
 
@@ -134,10 +157,10 @@ Module.register("MMM-PlayPortal", {
 		// Loads the first video.
 		this.nextVideo();
 		// Wrap it up.
-		wrapper.appendChild(this.video);
-
+		this.wrapper.appendChild(this.video);
+		
 		//Sends it back to the dom.
-		return wrapper;
+		return this.wrapper;
 	},
 
 	/*socketNotificationReceived: function(notification, payload) {
