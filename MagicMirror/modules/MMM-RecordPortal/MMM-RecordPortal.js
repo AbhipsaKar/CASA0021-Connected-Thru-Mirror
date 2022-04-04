@@ -27,6 +27,7 @@ Module.register("MMM-RecordPortal", {
 	mediaRecorder : null,
     m_blob: null,
 	record_state : false,
+	show_state : false,
 
 	getDom: function() {
 		console.log("getDom called: Abhi");
@@ -184,6 +185,7 @@ Module.register("MMM-RecordPortal", {
 			this.stopFuncton();
 			document.querySelector("h3").textContent = "Press RED button to record";
 		}
+		this.show_state = false;
 		//stop video
 		//this.hide();
 	},
@@ -198,6 +200,7 @@ Module.register("MMM-RecordPortal", {
 			this.record_state = true;
 			document.querySelector("h3").textContent = "RECORDING";
 		}*/	
+		this.show_state = true;
 	},
 
 	sendNotification: function(blob)
@@ -232,7 +235,7 @@ Module.register("MMM-RecordPortal", {
   notificationReceived: function(notification, payload, sender) {
     var self = this;
     
-    if(notification === 'START_TIMER') 
+    if(notification === 'START_TIMER' && this.show_state == true) 
     {
 	console.log("Record button press", this.record_state);
 		if(this.record_state == false)
