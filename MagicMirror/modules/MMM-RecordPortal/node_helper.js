@@ -1,9 +1,6 @@
 /* Magic Mirror
- * Node Helper: Newsfeed
+ * Node Helper: MMM-RecordPortal
  *
- * By Michael Teeuw https://michaelteeuw.nl
- * MIT Licensed.
- * Renamed to MMM-RecordPortal
  * Modified by: Abhipsa Kar
  * Date: 10-03-2022
  */
@@ -71,8 +68,8 @@ connectMqtt: function(config) {
 const options = {
   host: config.mqttServer,
   port: 1884,
-  username: 'student',
-  password : 'ce2021-mqtt-forget-whale',
+  username: 'xxxxx',
+  password : 'xxxxxxxxxx',
 
 }
       client = mqtt.connect( options);
