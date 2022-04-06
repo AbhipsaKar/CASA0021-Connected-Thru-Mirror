@@ -1,10 +1,5 @@
 /* Magic Mirror
- * Module: NewsFeed
- *
- * By Michael Teeuw https://michaelteeuw.nl
- * MIT Licensed.
- * 
- * Renamed to MMM-RecordPortal
+ * Module: MMM-RecordPortal
  * Modified by: Abhipsa Kar
  * Date: 10-03-2022
  */
