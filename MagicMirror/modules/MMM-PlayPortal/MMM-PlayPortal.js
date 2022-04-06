@@ -1,10 +1,8 @@
 /* Magic Mirror
- * Module: HelloWorld
- *
- * By Michael Teeuw https://michaelteeuw.nl
- * MIT Licensed.
+ * Module: MMM-PlayPortal
+ *.
  * 
- * Renamed to: MMM-PlayPortal
+ * Renamed from: MMM-Videoplayer(https://github.com/Snille/MMM-Videoplayer)
  * Modified by: Abhipsa kar
  * Date: 10-03-2022
  */
