@@ -25,11 +25,11 @@ Module.register("MMM-RecordPortal", {
 	show_state : false,
 
 	getDom: function() {
-		console.log("getDom called: Abhi");
+		console.log("getDom called");
 		const wrapper = document.createElement("div");
 
 		var title = document.createElement("h3");
-		title.textContent = "Press RED button to record";
+		title.textContent = "Press GREEN button to record";
 		wrapper.appendChild(title);
 		var frame = document.createElement("div");
 		frame.className = "contain";
@@ -178,7 +178,7 @@ Module.register("MMM-RecordPortal", {
 		if(this.record_state != false)
 		{
 			this.stopFuncton();
-			document.querySelector("h3").textContent = "Press RED button to record";
+			document.querySelector("h3").textContent = "Press GREEN button to record";
 		}
 		this.show_state = false;
 		//stop video
@@ -244,7 +244,7 @@ Module.register("MMM-RecordPortal", {
 			console.log("Stop recording");
 			
 			this.stopFuncton();
-			document.querySelector("h3").textContent = "Press RED button to record";
+			document.querySelector("h3").textContent = "Press GREEN button to record";
 		}	    
     }
 /*
