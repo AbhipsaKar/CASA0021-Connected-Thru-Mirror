@@ -44,7 +44,13 @@ Depends on what push button is used:
 2.	run npm install mqtt in MagicMirror home folder
 3.	Replace the config, css and modules folder in the MagicMirror
 4.	Unzip the node_modules file in MMM-Buttons, MMM-Carousel2, MMM-TFL-Arrivals-Modified
-5.	Edit the config.js file in the config folder by adding the api keys into it
+5.	Edit the config.js file in the config folder
+    - The naptanID for the MMM-TFL-Arrivals-Modified module can be found in the URLs of the bus stop webpage on TFL
+      e.g. King's Cross Station has a naptanID of 490000129E and can be found within https://tfl.gov.uk/bus/stop/490000129E/kings-cross-station
+    - The locationID for the weather and weatherforcast modules can be found in http://bulk.openweathermap.org/sample/city.list.json.gz or within the URLs of the openweathermap websites
+      e.g. London, GB has a location ID of 2643743 and can be found within https://openweathermap.org/city/2643743
+    - The apiKey and appid for the weather and weatherforcast modules are the API KEY from your openweathermap account
+    - Add your desired calendar url for calendar module
 6.	Connect the joystick and push button according to the Fritzing diagram below
 ![image](https://user-images.githubusercontent.com/91946874/162678989-142e8520-79f8-46b2-b3c0-a993aa8688f8.png)
 
