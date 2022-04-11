@@ -84,16 +84,7 @@ let config = {
 			}
 		},
 		
-		//tube -- works
-		{
-			module:		'MMM-Tube-Status',
-			position:	'top_left',
-			header:		'Tube Status',
-			classes: 'default everyone',
-			config:		{
-						show_all:	 true
-						}
-		},
+		
 		
 		{
 			module: 'MMM-TFL-Arrivals-Modified',
@@ -112,21 +103,7 @@ let config = {
 			}
 		},
 		
-		{
-			module: 	'MMM-UKLiveBusStopInfo',
-			position: 	'top_left',
-			classes: 'default everyone',
-			header:		'Departures',			//Optional - delete this line to turn OFF the header completely
-			config: {
-				atcocode: 		'490015165B', 		// ATCO code for specific bus stop
-				app_id: 		'app_id', 				// TransportAPI App ID
-				app_key: 		'app_key', 	            // TransportAPI App Key
-				limit: 			5, 					// Optional - Maximum results to display.
-				nextBuses: 		'no',              	// Optional - Use expensive RealTime info from NextBuses
-				showRealTime: 	false,          	// Optional - show realtime departure info
-				showDelay: 		false              	// Optional - show delay in minutes based on Real Time info vs Time table
-			}
-		},
+		
 		{
 			module: "weather",
 			position: "top_left",
