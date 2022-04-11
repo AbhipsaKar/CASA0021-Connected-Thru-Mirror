@@ -57,39 +57,42 @@ let config = {
 			module: 'calendar',
 			header: 'My Calendar',
 			position: 'top_left',
-			classes: 'default everyone',
+			classes: 'default default',
 			config: {
 				calendars: [
+
+					{
+						profile: "default",
+						symbol: 'calendar-check-o ',
+						//url: ''
+					},
 					{
 						profile: "Cade",
 						symbol: 'calendar-check-o ',
-						url: 'calendar_url1'
+						url: 'webcal://www.ucl.ac.uk/timetable/ics/TZQA8VBZG45CQQY'
 					},
 					{
 						profile: "Abi",
 						symbol: 'calendar-plus-o ',
-						url: 'calendar_url2'
+						url: 'https://calendar.google.com/calendar/ical/dv588tajo3h61dankh3pa1tud0%40group.calendar.google.com/private-b2d02f47799e5c5e91b618e1e360b731/basic.ics'
 					},
 					{
 						profile: "Wing",
 						symbol: 'birthday-cake',
-						url: 'calendar_url3'
+						url: 'https://calendar.google.com/calendar/ical/ajokj0cih56l27k8c5pg1gbk60%40group.calendar.google.com/private-8c7252064a61a20361b53ad89f66adad/basic.ics'
 					},
 					{
 						profile: "Abhipsa",
 						symbol: 'rocket ',
-						url: 'calendar_url4'
+						url: 'https://calendar.google.com/calendar/ical/ood9jqaitun5k71l3ift9cqono%40group.calendar.google.com/private-47bce4bfa57a2e9e477d1118a575b773/basic.ics'
 					},
 				]
 			}
 		},
 		
-		
-		
 		{
 			module: 'MMM-TFL-Arrivals-Modified',
 			position: 'top_left',
-			//header: 'Bus Arrivals',
 			classes: 'default everyone',
 			config: {
 				naptanId: "490000129E", // StopPoint id
@@ -102,8 +105,6 @@ let config = {
 				debug: true
 			}
 		},
-		
-		
 		{
 			module: "weather",
 			position: "top_left",
@@ -113,7 +114,7 @@ let config = {
 				type: "current",
 				location: "London",
 				locationID: "2643743", //ID from http://bulk.openweathermap.org/sample/city.list.json.gz; unzip the gz file and find your city
-				apiKey: "apiKey"
+				apiKey: "a2c004a13dbd263059d0ae2933482bcd"
 			}
 		},
 		{
@@ -123,7 +124,7 @@ let config = {
 			config: {
 				location: "London",
 				locationID: "2643743", //ID from http://bulk.openweathermap.org/sample/city.list.json.gz; unzip the gz file and find your city
-				appid: "appid"
+				appid: "a2c004a13dbd263059d0ae2933482bcd"
 			}
 		},
 		
@@ -180,7 +181,7 @@ let config = {
                 transitionInterval: 0,
             }
         },
-
+		{
 			module: 'MMM-Buttons',
 			classes: 'default everyone',
 			config: {
@@ -230,6 +231,43 @@ let config = {
 						shortPress: {
 							notification: "Joystick_action_right",
 							payload: {action: "pageright"}
+						}
+					},
+					
+					{
+						pin: 23,
+						name: "profile1",
+						longPress: undefined,
+						shortPress: {
+							notification: "Profile",
+							payload: "profile1"
+						}
+					},
+					{
+						pin: 24,
+						name: "profile2",
+						longPress: undefined,
+						shortPress: {
+							notification: "Profile",
+							payload: "profile2"
+						}
+					},
+					{
+						pin: 13,
+						name: "profile3",
+						longPress: undefined,
+						shortPress: {
+							notification: "Profile",
+							payload: "profile3"
+						}
+					},
+					{
+						pin: 20,
+						name: "profile4",
+						longPress: undefined,
+						shortPress: {
+							notification: "Profile",
+							payload: "profile4"
 						}
 					},																				
 				]
