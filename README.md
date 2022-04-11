@@ -35,10 +35,9 @@ Depends on what push button is used:
 3. MMM-Facial-Recognition https://github.com/paviro/MMM-Facial-Recognition
 4. MMM-ProfileSwitcher https://github.com/tosti007/MMM-ProfileSwitcher
 5. MMM-TFL-Arrivals https://github.com/ryck/MMM-TFL-Arrivals
-6. MMM-MQTT https://github.com/javiergayala/MMM-mqtt
-7. MMM-ModifiedTimer
-8. MMM-RecordPortal
-9. MMM-PlayPortal
+6. MMM-ModifiedTimer
+7. MMM-RecordPortal
+8. MMM-PlayPortal
 
 ### Installation
 1.	Install MagicMirror2 on Raspberry Pi
