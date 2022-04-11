@@ -54,6 +54,20 @@ Depends on what push button is used:
 6.	Connect the joystick and push button according to the Fritzing diagram below
 ![image](https://user-images.githubusercontent.com/91946874/162678989-142e8520-79f8-46b2-b3c0-a993aa8688f8.png)
 
+### Start magic mirror
+1. Download the testbutton.py
+2. Run testbutton.py
+```
+cd Documents
+python testbutton.py
+```
+3. Move the joystick and press the push button so that the console prints the detected actions
+4. If the printed messages are correct, start MagicMirror
+```
+cd ~/MagicMirror
+npm start
+```
+
 ## Where to get help
 For MagicMirror2 related questions, please refer to the official documentations or MagicMirror Forum https://forum.magicmirror.builders/
 
