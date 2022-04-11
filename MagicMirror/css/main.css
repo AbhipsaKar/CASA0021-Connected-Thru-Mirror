@@ -13,7 +13,7 @@
 
   --gap-body-top: 60px;
   --gap-body-right: 60px;
-  --gap-body-bottom: 60px;
+  --gap-body-bottom: 120px;
   --gap-body-left: 60px;
 
   --gap-modules: 30px;
@@ -147,7 +147,7 @@ sup {
 
 .region.bottom .module {
   margin-top: var(--gap-modules);
-  margin-bottom: 0;
+  margin-bottom: 20%;
 }
 
 .no-wrap {
@@ -187,7 +187,7 @@ sup {
 }
 
 .region.top {
-  top: 0;
+  top: 5%;
 }
 
 .region.top.center,

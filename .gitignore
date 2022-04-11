@@ -1,0 +1,7 @@
+MagicMirror\modules\*\node_modules\*
+*.json
+*.svg
+*.svg
+*.sample
+*.json
+*.yml

@@ -68,8 +68,8 @@ connectMqtt: function(config) {
 const options = {
   host: config.mqttServer,
   port: 1884,
-  username: 'xxxxx',
-  password : 'xxxxxxxxxx',
+  username: 'xxxxxx',
+  password : 'xxxxxxx',
 
 }
       client = mqtt.connect( options);
@@ -100,9 +100,10 @@ const options = {
           console.log('MQTT Client subscribing to ' + config.topic);
 
           client.on('message', function(topic, message) {
-			console.log("Message received");  
+			  
 
-			var filename = "./modules/MMM-PlayPortal/hello_" + config.profile + ".webm";
+			var filename = "./modules/MMM-PlayPortal/hello_" + config.symbol + ".webm";
+			console.log("Message received" + filename);
 			fs.writeFile(filename, message, "binary", (error, message) => {
 				console.log("Write complete for video");
 				console.log(error);

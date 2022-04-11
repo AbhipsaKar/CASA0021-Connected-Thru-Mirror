@@ -72,6 +72,9 @@
                self.manualTransition(undefined, -1);
                this.restartTimer();
            }
+           if (notification === "CHANGED_PROFILE"){
+               console.log("It works")
+           }
 
             // Handle KEYPRESS events from the MMM-KeyBindings Module
             if (notification === "KEYPRESS_MODE_CHANGED") {

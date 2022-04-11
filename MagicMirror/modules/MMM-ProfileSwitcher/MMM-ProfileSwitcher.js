@@ -163,6 +163,7 @@ Module.register("MMM-ProfileSwitcher", {
             Log.log("Hiding all non default modules.");
             this.set_profile(this.config.includeEveryoneToDefault);
             this.sendNotification("CHANGED_PROFILE", {to: this.config.defaultClass});
+            this.sendSocketNotification("CHANGED_PROFILE", {to: this.config.defaultClass});
         } else if (notification === "CURRENT_PROFILE") {
             this.change_profile(payload);
         } else if (notification === "DISABLE_PROFILE_TIMERS"){

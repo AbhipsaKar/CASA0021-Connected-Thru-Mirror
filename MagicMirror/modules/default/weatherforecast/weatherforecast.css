@@ -44,5 +44,5 @@
 
 .module.weatherforecast{
   border-radius: 0px 0px 20px 20px;
-  border-top: 0px solid var(--color-text-bright);
+  border: 0px 2px 2px 2px solid var(--color-text-bright);
 }

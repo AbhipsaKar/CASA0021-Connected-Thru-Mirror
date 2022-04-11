@@ -12,7 +12,7 @@ Module.register("MMM-PlayPortal", {
 	// Default module config.
 	defaults: {
 		defaultvideo: "/modules/MMM-PlayPortal/hello_0.webm",
-		videolist: ["/modules/MMM-PlayPortal/hello_0.webm","/modules/MMM-PlayPortal/hello_1.webm", "/modules/MMM-PlayPortal/hello_2.webm"],
+		videolist: ["/modules/MMM-PlayPortal/hello_0.webm","/modules/MMM-PlayPortal/hello_1.webm", "/modules/MMM-PlayPortal/hello_2.webm", "/modules/MMM-PlayPortal/hello_3.webm"],
 		random: false, // Play the videos randomly. 
 		loop: true, // Repeat the video list.
 		hideonstart: false, // If set to true, the player will hide it self when a clip is loaded (and just started playing). Then when the player is shown again it will continue play the clip and hide itself again when the next clip is loaded (and just starts playing) and so on.

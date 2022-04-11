@@ -48,6 +48,7 @@ let config = {
 		{
 			module: "clock",
 			position: "top_right",
+			classes: 'default everyone',
 			
 		},
 //		{
@@ -106,6 +107,7 @@ let config = {
 			module: 'calendar',
 			header: 'My Calendar',
 			position: 'top_left',
+			classes: 'default everyone',
 			config: {
 				calendars: [
 					//{
@@ -114,22 +116,22 @@ let config = {
 						//url: 'https://calendar.google.com/calendar/ical/0g640j0toqfsg4ovhko4tfogj4%40group.calendar.google.com/private-16d3b943a4fc9c0816e15dbff19fb922/basic.ics'
 					//},
 					{
-						profile: "profile1",
+						profile: "Cade",
 						symbol: 'calendar-check-o ',
 						url: 'webcal://www.ucl.ac.uk/timetable/ics/TZQA8VBZG45CQQY'
 					},
 					{
-						profile: "profile2",
+						profile: "Abi",
 						symbol: 'calendar-plus-o ',
 						url: 'https://calendar.google.com/calendar/ical/dv588tajo3h61dankh3pa1tud0%40group.calendar.google.com/private-b2d02f47799e5c5e91b618e1e360b731/basic.ics'
 					},
 					{
-						profile: "profile3",
+						profile: "Wing",
 						symbol: 'birthday-cake',
 						url: 'https://calendar.google.com/calendar/ical/ajokj0cih56l27k8c5pg1gbk60%40group.calendar.google.com/private-8c7252064a61a20361b53ad89f66adad/basic.ics'
 					},
 					{
-						profile: "profile4",
+						profile: "Abhipsa",
 						symbol: 'rocket ',
 						url: 'https://calendar.google.com/calendar/ical/ood9jqaitun5k71l3ift9cqono%40group.calendar.google.com/private-47bce4bfa57a2e9e477d1118a575b773/basic.ics'
 					},
@@ -142,6 +144,7 @@ let config = {
 			module:		'MMM-Tube-Status',
 			position:	'top_left',
 			header:		'Tube Status',
+			classes: 'default everyone',
 			config:		{
 						show_all:	 true
 						}
@@ -151,6 +154,7 @@ let config = {
 			module: 'MMM-TFL-Arrivals-Modified',
 			position: 'top_left',
 			//header: 'Bus Arrivals',
+			classes: 'default everyone',
 			config: {
 				naptanId: "490000129E", // StopPoint id
 				animationSpeed: 1000,
@@ -166,6 +170,7 @@ let config = {
 		{
 			module: 	'MMM-UKLiveBusStopInfo',
 			position: 	'top_left',
+			classes: 'default everyone',
 			header:		'Departures',			//Optional - delete this line to turn OFF the header completely
 			config: {
 				atcocode: 		'490015165B', 		// ATCO code for specific bus stop
@@ -195,6 +200,7 @@ let config = {
 		{
 			module: "weather",
 			position: "top_left",
+			classes: 'default everyone',
 			config: {
 				weatherProvider: "openweathermap",
 				type: "current",
@@ -206,6 +212,7 @@ let config = {
 		{
 			module: "weatherforecast",
 			position: "top_left",
+			classes: 'default everyone',
 			config: {
 				location: "London",
 				locationID: "2643743", //ID from http://bulk.openweathermap.org/sample/city.list.json.gz; unzip the gz file and find your city
@@ -216,6 +223,7 @@ let config = {
 		{
 			module: "newsfeed",
 			position: "bottom_right",
+			classes: 'default everyone',
 			config: {
 				feeds: [
 					{
@@ -240,6 +248,7 @@ let config = {
 		{
 			module: 'MMM-ModifiedTimer',
 			position: "bottom_right",
+			classes: 'default everyone',
 		},
 		//{
 			//module: 'MMM-pages',
@@ -260,16 +269,33 @@ let config = {
 				//pages:3,
 			//}
 		//},
+		 {
+			module: "MMM-RecordPortal",
+			position: "middle_center",
+			classes: 'default everyone',
+			
+			
+		},
+		{
+			module: "MMM-PlayPortal",
+			position: "middle_center",
+			classes: 'default everyone',
+			
+
+		}, 
 		{
             module: 'MMM-Carousel2',
             position: 'bottom_bar', // Required only for navigation controls
+            classes: 'default everyone',
             config: {
                 showPageIndicators: true,
                 showPageControls: true,
                 mode: 'slides',
                 slides: [
-                   [ "calendar","clock","weather","weatherforecast","newsfeed", "MMM-TFL-Arrivals-Modified"],
-				   [ "MMM-ModifiedTimer","calendar", "clock" ,"MMM-TFL-Arrivals-Modified"]
+                   [ "calendar","clock","weather","weatherforecast","newsfeed", "MMM-TFL-Arrivals-Modified",'MMM-Facial-Recognition'],
+				   [ "MMM-ModifiedTimer","calendar", "clock" ,"MMM-TFL-Arrivals-Modified",'MMM-Facial-Recognition'],
+				   ["MMM-RecordPortal"],
+				   ["MMM-PlayPortal"],
                 ],
                 transitionInterval: 0,
                 //slideTransitionSpeed: 500,
@@ -299,6 +325,7 @@ let config = {
 		//},
 		{
 			module: 'MMM-Buttons',
+			classes: 'default everyone',
 			config: {
 				buttons: [
 					{
@@ -386,6 +413,50 @@ let config = {
 						}
 					},																				
 				]
+			}
+		},
+
+		{
+			module: 'MMM-ProfileSwitcher',
+			config: {
+				// See 'Configuration options' for more information.
+				ignoreModules: ["alert", "updatenotification", "MMM-ProfileSwitcher", "MMM-Facial-Recognition",],
+				enterMessages: {
+					"Cade" : "Hi,Cade! You look nice today!",
+					"Abi" : "Hi,Abi! You look nice today!",
+					"Wing" : "Hi,Wing! You look nice today!",
+					"Abhipsa" : "Hi,Abhipsa! You look nice today!",
+					},
+			}
+		},
+		{
+    	module: 'MMM-Facial-Recognition',
+    	config: {
+    		// 1=LBPH | 2=Fisher | 3=Eigen
+    		recognitionAlgorithm: 1,
+    		// Threshold for the confidence of a recognized face before it's considered a
+    		// positive match.  Confidence values below this threshold will be considered
+    		// a positive match because the lower the confidence value, or distance, the
+    		// more confident the algorithm is that the face was correctly detected.
+    		lbphThreshold: 50,
+    		fisherThreshold: 250,
+    		eigenThreshold: 3000,
+    		// force the use of a usb webcam on raspberry pi (on other platforms this is always true automatically)
+    		useUSBCam: true,
+    		// Path to your training xml
+    		trainingFile: 'modules/MMM-Facial-Recognition/training.xml',
+    		// recognition intervall in seconds (smaller number = faster but CPU intens!)
+    		interval: 2,
+    		// Logout delay after last recognition so that a user does not get instantly logged out if he turns away from the mirror for a few seconds
+    		logoutDelay: 15,
+    		// Array with usernames (copy and paste from training script)
+    		users:['Abi', 'Wing', 'Abhipsa', 'Cade'],
+    		//Module set used for strangers and if no user is detected
+    		defaultClass: "default",
+       		//Set of modules which should be shown for every user
+    		everyoneClass: "everyone",
+    		// Boolean to toggle welcomeMessage
+    		welcomeMessage: true
 			}
 		},
 	  //{

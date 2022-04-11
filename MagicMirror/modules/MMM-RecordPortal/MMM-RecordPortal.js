@@ -17,7 +17,7 @@ Module.register("MMM-RecordPortal", {
     	topic: 'student/CASA0014/plant/ucfnaka/CAMERAFEED/',
 		interval: 300000,
 		},
-	profile: 2,
+	symbol: 0,
 	streaming : 0,
 	mediaRecorder : null,
     m_blob: null,
@@ -73,52 +73,8 @@ Module.register("MMM-RecordPortal", {
   			console.log(err.name + ": " + err.message);
 		});  */
 
-		this.updateMqtt(this);          	
-		navigator.mediaDevices.getUserMedia({
-			video: true,
-			audio: true,                
-		})
-		.then(function(stream) {
-
-			if (!this.streaming) {
-				console.log("Ready to play");
-				var options = {
-					audioBitsPerSecond : 128000,
-					videoBitsPerSecond : 128000,
-					mimeType : 'video/webm'
-		   		}
-				this.mediaRecorder = new MediaRecorder(stream,options);
-				//Make the mediaRecorder global
-				window.MediaRecorder = this.mediaRecorder;
-	  
-				// Whenever (here when the recorder
-				// stops recording) data is available
-				// the MediaRecorder emits a "dataavailable" 
-				// event with the recorded media data.
-				this.streaming = true;
-				window.MediaRecorder.onstart = (e) => {
-					console.log("Record started");
-					this.record_state = true;
-				}
-
-				window.MediaRecorder.ondataavailable = (e) => {
-			
-					if(e.data == null)
-					{
-						console.log("No data to push!!" );
-	
-					}
-					// Push the recorded media data to
-					// the chunks array
-					chunks.push(e.data);
-					console.log("data push",chunks);
-				};
-			}
-    	})
-    	.catch(function(err) {
-     		 console.log("An error occurred: " + err);
-    	});
-
+		//this.updateMqtt(this);          	
+		
  
 	},
 
@@ -160,7 +116,7 @@ Module.register("MMM-RecordPortal", {
 				console.log("promise resolved");
 				self.sendSocketNotification("SAVE_FILE", self.m_blob);
 	
-				var topic = self.config.topic + self.profile;
+				var topic = self.config.topic + self.symbol;
 				self.sendSocketNotification("MQTT_SEND", {
 					mqttServer: self.config.mqttServer,
 					topic: topic,
@@ -196,6 +152,53 @@ Module.register("MMM-RecordPortal", {
 			document.querySelector("h3").textContent = "RECORDING";
 		}*/	
 		this.show_state = true;
+		this.updateMqtt(this); 
+		console.log("Resume function called");
+		navigator.mediaDevices.getUserMedia({
+			video: true,
+			audio: true,                
+		})
+		.then(function(stream) {
+
+			if (!this.streaming) {
+				console.log("Ready to play");
+				var options = {
+					audioBitsPerSecond : 128000,
+					videoBitsPerSecond : 128000,
+					mimeType : 'video/webm'
+		   		}
+				this.mediaRecorder = new MediaRecorder(stream,options);
+				//Make the mediaRecorder global
+				window.MediaRecorder = this.mediaRecorder;
+	  
+				// Whenever (here when the recorder
+				// stops recording) data is available
+				// the MediaRecorder emits a "dataavailable" 
+				// event with the recorded media data.
+				this.streaming = true;
+				window.MediaRecorder.onstart = (e) => {
+					console.log("Record started");
+					this.record_state = true;
+				}
+
+				window.MediaRecorder.ondataavailable = (e) => {
+			
+					if(e.data == null)
+					{
+						console.log("No data to push!!" );
+	
+					}
+					// Push the recorded media data to
+					// the chunks array
+					chunks.push(e.data);
+					console.log("data push",chunks);
+				};
+			}
+		})
+		.catch(function(err) {
+			console.log("An error occurred: " + err);
+		});
+
 	},
 
 	sendNotification: function(blob)
@@ -204,7 +207,7 @@ Module.register("MMM-RecordPortal", {
 	},
 
   	updateMqtt: function(self) {
-    	self.sendSocketNotification('MQTT_SERVER', { mqttServer: self.config.mqttServer, topic: self.config.topic, mode: self.config.mode ,profile:self.profile});
+    	self.sendSocketNotification('MQTT_SERVER', { mqttServer: self.config.mqttServer, topic: self.config.topic, mode: self.config.mode ,symbol:self.symbol});
     	setTimeout(self.updateMqtt, self.config.interval, self);
   	},
        	
@@ -247,6 +250,23 @@ Module.register("MMM-RecordPortal", {
 			document.querySelector("h3").textContent = "Press GREEN button to record";
 		}	    
     }
+    if (notification === "Profile"){
+	console.log("profile chg", payload);
+	  if(payload === "Cade"){
+		 this.symbol = 0; 
+	  }
+	  else if(payload === "Abi"){
+		 this.symbol = 1; 
+	  }
+	  else if(payload === "Wing"){
+		 this.symbol = 2; 
+	  }
+	  else if(payload === "Abhipsa"){
+		 this.symbol = 3; 
+	  }
+	  console.log("symbol", this.symbol);
+    }
+    
 /*
     var topic;
     if (sender) {
