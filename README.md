@@ -42,6 +42,7 @@ Depends on what push button is used:
 
 ### Installation
 1.	Install MagicMirror2 on Raspberry Pi
+2.	run npm install mqtt in MagicMirror home folder
 3.	Replace the config, css and modules folder in the MagicMirror
 4.	Unzip the node_modules file in MMM-Buttons, MMM-Carousel2, MMM-TFL-Arrivals-Modified
 5.	Edit the config.js file in the config folder by adding the api keys into it
