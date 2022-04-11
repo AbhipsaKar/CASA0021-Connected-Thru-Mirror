@@ -44,7 +44,8 @@ Depends on what push button is used:
 1.	Install MagicMirror2 on Raspberry Pi
 3.	Replace the config, css and modules folder in the MagicMirror
 4.	Unzip the node_modules file in MMM-Buttons, MMM-Carousel2, MMM-TFL-Arrivals-Modified
-5.	Connect the joystick and push button according to the Fritzing diagram below
+5.	Edit the config.js file in the config folder by adding the api keys into it
+6.	Connect the joystick and push button according to the Fritzing diagram below
 ![image](https://user-images.githubusercontent.com/91946874/162678989-142e8520-79f8-46b2-b3c0-a993aa8688f8.png)
 
 ## Where to get help
