@@ -1,6 +1,6 @@
 # CASA0021-Connected-Thru-Mirror
 Group project prototype created for CASA0021 module
-Product demo: https://www.youtube.com/watch?v=fjhPnnlj3zE
+<br>Product demo: https://www.youtube.com/watch?v=fjhPnnlj3zE
 
 ## What the project does
 While getting ready to leave the house for the day, the user should be able to look at the mirror on the desk or wall in the hallway and get important information like the time of the next train or our work schedule for the day. The mirror displays the following information:
