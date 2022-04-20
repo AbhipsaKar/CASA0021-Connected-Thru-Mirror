@@ -24,7 +24,7 @@ module.exports = NodeHelper.create({
 			
 		}
 		if (notification === "SAVE_FILE") {
-			console.log("Notification received:Abby ");
+			console.log("Notification received ");
 
   			fs.writeFile("test_vid.txt", payload, "binary", (error, payload) => {
   				console.log("Write complete");
@@ -66,6 +66,7 @@ connectMqtt: function(config) {
       console.log("Creating new MQTT client for url: ", config.mqttServer);
 
 const options = {
+	/* Replace the MQTT username and password */
   host: config.mqttServer,
   port: 1884,
   username: 'xxxxxx',
