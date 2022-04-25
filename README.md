@@ -8,6 +8,7 @@ While getting ready to leave the house for the day, the user should be able to l
 2. Weather/ forecast
 3. Clock
 4. Newsfeed  
+
 The mirror is customised to the nearest station (currently it is set as King's Cross Station) and the calendar credentials while protecting the user's privacy from other guests using face recognition. Additionally, considering that a family would have multiple members, the mirror supports more than one profile. It has a timer that can countdouwn from 1,2,3,4 or 5 minutes and has a portal that allows recording and playing short videos.
 The mirror is controlled by joystick and push button physically.
 
