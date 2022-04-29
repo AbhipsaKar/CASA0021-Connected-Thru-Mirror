@@ -81,6 +81,22 @@ npm start
 ## Where to get help
 For MagicMirror2 related questions, please refer to the official documentations or MagicMirror Forum https://forum.magicmirror.builders/
 
+## Challenges
+1. Since there is only one hardware setup, it is difficult for us to work individually or test the codes.
+2. AI module cannot work in tandem with the portal module due to camera resource deadlock. Therefore we restricted the AI to work only during initialization. To change the profile, the mirror has to be restarted.
+3. In the AI module, sometimes an unknown face was also recognised as a known face with a quite low score, therefore a threshold was set to filter the low score faces.
+4. For unknown reason, sometimes the button and joystick do not work. To solve this, a script called testbutton.py was written. After running this script, the button and joystick would work again.
+5. In the portal mode development, it was extremely difficult to publish the video on MQTT due to the asynchronous nature of Javascript and memory intensive nature of blob video chunks. This issue was overcome using correct scoping of variables and using promises.
+6. The portal modules were always playing in the background. To fix this, suspend and resume functions were added to restrict them to their corresponding pages.
+
+## Future improvements
+1.The purchased mirror performs well in being reflective, yet its transparency is suboptimal especially in a bright environment. A high quality mirror and spare parts would enhance visibility and flexibility. 
+2.The current setup only works on a desk and take up a lot of spaces, more compacted components can be purchased so that the mirror can be thin enough to be placed anywhere.
+3.A public MQTT is used due to operational constraints. In the future, a private MQTT should be used and the videos should be transmitted in an encrypted format.
+In fact, although MQTT works for short videos, an FTP server should be used for storing videos. MQTT should be used for conveying the notifications and ftp url.
+4.Currently, all videos sent by the sender mirror can be viewed by everyone on the receiving mirror. In the future iterations, technical specifications should allow one profile to communicate with another profile on a separate mirror. 
+5.The future product would likely be accompanied with an app which would enable users to set up the magic mirror with the nearest station, training the AI module, add a new profile and set a calendar. Users can also choose to add/remove modules or change ownership easily without delving into the code. Bu supporting login/logout facility these mirrors can be used in a public setting like hotels.
+
 ## Contributors
 AbhipsaKar https://github.com/AbhipsaKar
 abichoi https://github.com/abichoi
