@@ -2,6 +2,7 @@
 Group project prototype created for CASA0021 module
 <br>Product demo: https://www.youtube.com/watch?v=fjhPnnlj3zE
 
+
 ## What the project does
 While getting ready to leave the house for the day, the user should be able to look at the mirror on the desk or wall in the hallway and get important information like the time of the next train or our work schedule for the day. The mirror displays the following information:
 1. TFL bus timings at the nearest station
@@ -15,6 +16,8 @@ The mirror is controlled by joystick and push button physically.
 ## Why the project is useful
 The idea of having a mirror with display function stems from the limited living space in modern cities, as well as too many devices and screens with infrequent uses in terms of number and duration. Apart from design and decoration, the device serves as a tool to inform and assist users. There are smart mirrors available on the market or by DIY. However, they are mostly one-way which only show information to users and leave little room for users’ input. Often users can only read the information on the mirror, whether it be photos, texts, or videos, with little possibility to insert new information to the device. This product was designed with the ability to receive input data such as video,  as well as commands such as to control the information to be displayed, and set a stopwatch with adjustable length. Equipped with not only a screen but also sensors (camera), this device is an enhancement of the conventional smart mirror and enables bi-directional connection of user, device, and different data sources.
 Potential users for this device include technophiles as well as potentially anyone at home, office, or hotel, acquiring the device either by themselves or by the property developers/company. In addition, this product has potential to connect relatives living away through short video messages.
+
+<img width="615" alt="Storyboard" src="https://user-images.githubusercontent.com/91799774/165929435-c831cb3d-804e-4284-966b-0b966d566a79.PNG">
 
 ## How to get started
 ### Components
@@ -44,9 +47,10 @@ Depends on what push button is used:
 ### Installation :
 You can recreate this mirror on your own Rpi using the following steps:
 1.	Install MagicMirror2 on Raspberry Pi(use tutorial: https://howchoo.com/g/ntcymzbimjv/how-to-install-magic-mirror-on-your-raspberry-pi)
-2.	run following command in home folder to install mqtt: 
-cd MagicMirror 
-npm install mqtt
+2.	Enable VNC, Camera and GPIO in the rpi configuration menu($ sudo raspi-config)
+3.	run following command in home folder to install mqtt: 
+$ cd MagicMirror 
+$ npm install mqtt
 4.	Replace the config, css and modules folder in the MagicMirror folder from this repository.
 5.	Unzip the node_modules file in MMM-Buttons, MMM-Carousel2, MMM-TFL-Arrivals-Modified
 6.	Edit the config.js file in the config folder
